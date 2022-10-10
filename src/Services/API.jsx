@@ -2,7 +2,13 @@ import axios from 'axios';
 
 const BASE_URL = "http://localhost:3001/api/v1"
 
-// Log In User
+  /**
+ * API Log In User
+ * @param {String} userName
+ *  * @param {String} userPassword
+ * @returns {Object}
+ */
+
 export const logInUser = (userName, userPwd) => {
   
   return axios.post(BASE_URL + "/user/login", {
@@ -48,7 +54,13 @@ export const getUserInfo = (tokenKey) => {
     })
   }
 
-
+/**
+ * API put  to change user information
+ * @param {String} token 
+ * @param {String} firstName
+ * @param {String} lastName
+ * @returns {Object}
+ */
   export const updateUser = (tokenKey,firstName, lastName) => {  
 
     return axios.put(BASE_URL + "/user/profile",  {
